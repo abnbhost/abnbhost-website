@@ -39,7 +39,7 @@ if (leadForm) leadForm.addEventListener('submit', () => {
   const pageSlug = { 'index.html': 'home', 'about.html': 'about', 'services.html': 'services', 'portfolio.html': 'portfolio', 'why-abnbhost.html': 'why', 'insights.html': 'insights', 'partner.html': 'partner' }[filename] || 'home';
   const query = `{
     "settings": *[_type == "siteSettings"][0]{email, whatsapp, instagram, youtube, formRecipientEmail, metrics, locations},
-    "page": *[_type == "page" && slug.current == $pageSlug][0]{heroTitle, heroDescription, introTitle, seoDescription, sections[]{key, label, eyebrow, heading, body, buttonLabel, buttonLink, "imageUrl": image.asset->url, items[]{label, title, description, "imageUrl": image.asset->url}}},
+    "page": *[_type == "page" && slug.current == $pageSlug][0]{heroTitle, heroDescription, introTitle, seoDescription, "heroImageUrl": heroImage.asset->url, sections[]{key, label, eyebrow, heading, body, buttonLabel, buttonLink, "imageUrl": image.asset->url, items[]{label, title, description, "imageUrl": image.asset->url}}},
     "properties": *[_type == "property" && featured == true] | order(sortOrder asc){name, location, type, "imageUrl": image.asset->url},
     "services": *[_type == "service"] | order(sortOrder asc){title, summary, "imageUrl": image.asset->url, showOnHome},
     "insights": *[_type == "insight"] | order(sortOrder asc){title, category, summary, featured, "imageUrl": image.asset->url}
@@ -57,6 +57,7 @@ if (leadForm) leadForm.addEventListener('submit', () => {
     const description = pageSlug === 'home' ? document.querySelector('.hero-bottom p') : document.querySelector('.page-hero > div > p:last-child, .partner-copy > p:last-of-type');
     if (heading && page?.heroTitle) heading.textContent = page.heroTitle;
     if (description && page?.heroDescription) description.textContent = page.heroDescription;
+    if (page?.heroImageUrl) updateImage(pageSlug === 'home' ? '.hero-image' : '.page-hero', page.heroImageUrl);
     if (pageSlug === 'home' && page?.introTitle) {
       const intro = document.querySelector('.intro-copy h2');
       if (intro) intro.textContent = page.introTitle;
