@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: abnbhost/abnbhost-website
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "website"
+    label: "Website content"
+    files:
+      - label: "Pages and contact details"
+        name: "site"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - { label: "Content", name: "content", widget: "code", default_language: "json" }
