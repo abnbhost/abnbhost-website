@@ -65,6 +65,13 @@ if (leadForm) leadForm.addEventListener('submit', () => {
     if (page?.seoDescription) document.querySelector('meta[name="description"]')?.setAttribute('content', page.seoDescription);
     if (settings?.email) document.querySelectorAll('a[href^="mailto:"]').forEach((link) => { link.href = `mailto:${settings.email}`; });
     if (settings?.whatsapp) document.querySelectorAll('a[href^="https://wa.me/"]').forEach((link) => { link.href = `https://wa.me/${settings.whatsapp.replace(/\D/g, '')}`; });
+    if (settings?.instagram) document.querySelectorAll('a[href*="instagram.com/"]').forEach((link) => {
+      link.href = `https://instagram.com/${settings.instagram.replace(/^@/, '')}`;
+      if (link.textContent.includes('@')) link.innerHTML = `@${settings.instagram.replace(/^@/, '')} on Instagram <b>↗</b>`;
+    });
+    if (settings?.youtube) document.querySelectorAll('a[href*="youtube.com/"]').forEach((link) => {
+      link.href = `https://youtube.com/@${settings.youtube.replace(/^@/, '')}`;
+    });
     if (settings?.formRecipientEmail) document.querySelector('#lead-form')?.setAttribute('action', `https://formsubmit.co/${settings.formRecipientEmail}`);
     if (pageSlug === 'home' && Array.isArray(settings?.metrics) && settings.metrics.length) {
       document.querySelectorAll('.stats > div').forEach((card, index) => {
