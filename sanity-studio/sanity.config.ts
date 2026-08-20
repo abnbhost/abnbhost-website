@@ -24,6 +24,7 @@ const page = defineType({
     defineField({name: 'slug', title: 'Page', type: 'slug', options: {source: 'title', maxLength: 96}, validation: (rule) => rule.required()}),
     defineField({name: 'heroTitle', title: 'Main heading', type: 'string', validation: (rule) => rule.required()}),
     defineField({name: 'heroDescription', title: 'Heading description', type: 'text', rows: 3}),
+    defineField({name: 'heroImage', title: 'Hero image', type: 'image', options: {hotspot: true}}),
     defineField({name: 'introTitle', title: 'Homepage introduction heading', type: 'string', hidden: ({document}) => document?.slug?.current !== 'home'}),
     defineField({name: 'seoDescription', title: 'Search description', type: 'text', rows: 2}),
     defineField({
