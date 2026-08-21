@@ -134,7 +134,7 @@ function renderPageSections(slug, sections) {
     const maps = {
       about: {
         story: () => { updateText('.story h2', section.heading); updateText('.story .section-label', section.label); applyItems('.story > div:last-child p', section.items, {title: 'strong', description: 'p'}); },
-        philosophy: () => { updateText('.philosophy h2', section.heading); updateText('.philosophy .eyebrow', section.eyebrow); applyItems('.philosophy-grid p', section.items, {description: 'p'}); },
+        philosophy: () => { updateText('.philosophy h2', section.heading); updateText('.philosophy .eyebrow', section.eyebrow); updateText('.philosophy-grid p:first-child', section.body); applyItems('.philosophy-grid p:nth-child(n+2)', section.items, {description: 'p'}); },
         mission: () => { updateText('.mission h2', section.heading); updateText('.mission article > p:last-of-type', section.body); updateText('.mission .eyebrow', section.eyebrow); updateText('.mission .button-dark', section.buttonLabel); updateImage('.mission > div', section.imageUrl); }
       },
       services: {
