@@ -40,7 +40,7 @@ if (leadForm) leadForm.addEventListener('submit', () => {
   const query = `{
     "settings": *[_type == "siteSettings"][0]{email, whatsapp, instagram, youtube, formRecipientEmail, metrics, locations},
     "page": *[_type == "page" && slug.current == $pageSlug][0]{heroTitle, heroDescription, introTitle, seoDescription, "heroImageUrl": heroImage.asset->url, sections[]{key, label, eyebrow, heading, body, buttonLabel, buttonLink, "imageUrl": image.asset->url, items[]{label, title, description, "imageUrl": image.asset->url}}},
-    "properties": *[_type == "property" && featured == true] | order(sortOrder asc){name, location, type, "imageUrl": image.asset->url},
+    "properties": *[_type == "property"] | order(sortOrder asc){name, location, type, "imageUrl": image.asset->url},
     "services": *[_type == "service"] | order(sortOrder asc){title, summary, "imageUrl": image.asset->url, showOnHome},
     "insights": *[_type == "insight"] | order(sortOrder asc){title, category, summary, featured, "imageUrl": image.asset->url}
   }`;
