@@ -35,8 +35,8 @@ if (leadForm) leadForm.addEventListener('submit', () => {
   const projectId = 'nvnz9p1u';
   const dataset = 'production';
   const apiVersion = '2026-08-20';
-  const filename = location.pathname.split('/').pop() || 'index.html';
-  const pageSlug = { 'index.html': 'home', 'about.html': 'about', 'services.html': 'services', 'portfolio.html': 'portfolio', 'why-abnbhost.html': 'why', 'insights.html': 'insights', 'partner.html': 'partner' }[filename] || 'home';
+  const filename = (location.pathname.split('/').pop() || 'index').replace('.html', '');
+  const pageSlug = { index: 'home', about: 'about', services: 'services', portfolio: 'portfolio', 'why-abnbhost': 'why', insights: 'insights', partner: 'partner' }[filename] || 'home';
   const query = `{
     "settings": *[_type == "siteSettings"][0]{email, whatsapp, instagram, youtube, formRecipientEmail, metrics, locations},
     "page": *[_type == "page" && slug.current == $pageSlug][0]{heroTitle, heroDescription, introTitle, seoDescription, "heroImageUrl": heroImage.asset->url, sections[]{key, label, eyebrow, heading, body, buttonLabel, buttonLink, "imageUrl": image.asset->url, items[]{label, title, description, "imageUrl": image.asset->url}}},
