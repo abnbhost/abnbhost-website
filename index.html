@@ -9,18 +9,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="single-page.css" />
   </head>
   <body>
     <div class="page-grain" aria-hidden="true"></div>
     <header class="site-header" id="top">
         <a href="index.html" class="brand" aria-label="ABNBHost home"><span>ABNB</span>HOST<i></i></a>
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="about.html">About us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="why-abnbhost.html">Why ABNBHost</a><a href="insights.html">Insights</a>
+        <a href="#about">About us</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#why">Why ABNBHost</a><a href="#insights">Insights</a>
       </nav>
-      <a class="header-cta" href="partner.html">Partner with us <span>↗</span></a>
+      <a class="header-cta" href="#contact">Partner with us <span>↗</span></a>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </header>
-    <div class="mobile-nav"><a href="about.html">About us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="why-abnbhost.html">Why ABNBHost</a><a href="insights.html">Insights</a><a href="partner.html">Partner with us</a></div>
+    <div class="mobile-nav"><a href="#about">About us</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#why">Why ABNBHost</a><a href="#insights">Insights</a><a href="#contact">Partner with us</a></div>
 
     <main>
       <section class="hero">
@@ -31,14 +32,14 @@
           <p class="eyebrow light reveal">A better way to host</p>
           <h1 class="reveal">We Manage<br /><em>Properties.</em><br />You Build the Business.</h1>
           <div class="hero-bottom reveal">
-            <a href="partner.html" class="round-link">Let’s talk <b>↘</b></a>
+            <a href="#contact" class="round-link">Let’s talk <b>↘</b></a>
             <p>End-to-end short-term rental operations for owners who expect more from their homes.</p>
           </div>
         </div>
         <div class="hero-scroll"><span></span> Scroll to explore</div>
       </section>
 
-      <section class="intro section-pad">
+      <section class="intro section-pad" id="about">
         <div class="section-label"><span>01</span> The ABNBHost difference</div>
         <div class="intro-copy">
           <h2 class="reveal">Hospitality should feel <em>personal</em>—even when it runs at scale.</h2>
@@ -80,12 +81,25 @@
         <div class="steps"><article class="step active"><span>01</span><h3>Tell us about your home</h3><p>A quick conversation about your property, ambitions and where you need support.</p></article><article class="step"><span>02</span><h3>We build the blueprint</h3><p>We audit the opportunity and shape an operation around the character of your home.</p></article><article class="step"><span>03</span><h3>You settle into returns</h3><p>We launch, manage and optimize. You receive clarity, confidence and more time back.</p></article></div>
       </section>
 
+      <section class="single-page-feature section-pad" id="why">
+        <div class="section-label"><span>06</span> Why ABNBHost</div>
+        <div><p class="eyebrow">A different way to operate</p><h2>One team. One system.<br /><em>One point of contact.</em></h2></div>
+        <p>Professional management built around your asset—so you can own the property without running the operation.</p>
+        <div class="single-page-points"><article><strong>10+ years</strong><span>Hands-on hospitality experience</span></article><article><strong>5,000+</strong><span>Hosts helped onboard</span></article><article><strong>Local teams</strong><span>On-ground operations in every detail</span></article></div>
+      </section>
+
+      <section class="single-page-feature section-pad single-page-insights" id="insights">
+        <div class="section-label"><span>07</span> Insights</div>
+        <div><p class="eyebrow">Ideas for better hosting</p><h2>Practical knowledge for<br /><em>better-performing stays.</em></h2></div>
+        <div class="single-page-points"><article><strong>Owner guide</strong><span>How much can your property earn as a short-term rental?</span></article><article><strong>Revenue</strong><span>How dynamic pricing works for short-term rentals</span></article><article><strong>Operations</strong><span>Should you manage your Airbnb yourself?</span></article></div>
+      </section>
+
       <section class="contact" id="contact">
         <div class="contact-copy"><p class="eyebrow light">Own a beautiful property?</p><h2>Let’s make it<br /><em>work beautifully.</em></h2><p>Tell us a little about your home. Our team will be in touch within two working days.</p></div>
         <form class="contact-form" id="lead-form" action="https://formsubmit.co/hello@abnbhost.com" method="POST"><input type="hidden" name="_subject" value="New ABNBHost website inquiry" /><input type="hidden" name="_captcha" value="false" /><label>Your name<input required name="name" autocomplete="name" placeholder="First and last name" /></label><label>Email address<input required type="email" name="email" autocomplete="email" placeholder="you@company.com" /></label><label>Where is your property?<input required name="location" placeholder="City, state" /></label><label>Tell us about it <span>(optional)</span><textarea name="message" placeholder="Property type, number of rooms, or anything else..."></textarea></label><button type="submit">Send inquiry <span>↗</span></button><p class="form-message" aria-live="polite"></p></form>
       </section>
     </main>
-    <footer><a href="#top" class="brand"><span>ABNB</span>HOST<i></i></a><div><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="partner.html">Partner with us</a></div><p>© 2026 ABNBHost. Made for better stays.</p><a href="#top" class="back-top">Back to top ↑</a></footer>
+    <footer><a href="#top" class="brand"><span>ABNB</span>HOST<i></i></a><div><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Partner with us</a></div><p>© 2026 ABNBHost. Made for better stays.</p><a href="#top" class="back-top">Back to top ↑</a></footer>
     <script src="script.js"></script>
   </body>
 </html>
