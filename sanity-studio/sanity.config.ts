@@ -48,28 +48,6 @@ const page = defineType({
   ], preview: {select: {title: 'title', subtitle: 'slug.current'}}
 })
 
-const property = defineType({
-  name: 'property', title: 'Property', type: 'document',
-  fields: [
-    defineField({name: 'name', title: 'Property name', type: 'string', validation: (rule) => rule.required()}),
-    defineField({name: 'location', title: 'Location', type: 'string', initialValue: 'Jaipur'}),
-    defineField({name: 'type', title: 'Property type', type: 'string'}),
-    defineField({name: 'image', title: 'Property image', type: 'image', options: {hotspot: true}}),
-    defineField({name: 'featured', title: 'Show on homepage', type: 'boolean', initialValue: true}),
-    defineField({name: 'sortOrder', title: 'Display order', type: 'number', initialValue: 10})
-  ], preview: {select: {title: 'name', subtitle: 'location', media: 'image'}}
-})
-
-const testimonial = defineType({
-  name: 'testimonial', title: 'Testimonial', type: 'document',
-  fields: [
-    defineField({name: 'name', title: 'Owner name', type: 'string', validation: (rule) => rule.required()}),
-    defineField({name: 'location', title: 'Location', type: 'string', initialValue: 'Jaipur'}),
-    defineField({name: 'quote', title: 'Testimonial', type: 'text', rows: 5, validation: (rule) => rule.required()}),
-    defineField({name: 'featured', title: 'Show on website', type: 'boolean', initialValue: true})
-  ], preview: {select: {title: 'name', subtitle: 'location'}}
-})
-
 const service = defineType({
   name: 'service', title: 'Service', type: 'document',
   fields: [
@@ -81,23 +59,11 @@ const service = defineType({
   ], preview: {select: {title: 'title', subtitle: 'summary', media: 'image'}}
 })
 
-const insight = defineType({
-  name: 'insight', title: 'Insight / article', type: 'document',
-  fields: [
-    defineField({name: 'title', title: 'Article title', type: 'string', validation: (rule) => rule.required()}),
-    defineField({name: 'category', title: 'Category and reading time', type: 'string'}),
-    defineField({name: 'summary', title: 'Short summary', type: 'text', rows: 3}),
-    defineField({name: 'image', title: 'Article image', type: 'image', options: {hotspot: true}}),
-    defineField({name: 'featured', title: 'Featured article', type: 'boolean', initialValue: false}),
-    defineField({name: 'sortOrder', title: 'Display order', type: 'number', initialValue: 10})
-  ], preview: {select: {title: 'title', subtitle: 'category', media: 'image'}}
-})
-
 export default defineConfig({
   name: 'default',
   title: 'ABNBHost Content Studio',
   projectId: 'nvnz9p1u',
   dataset: 'production',
   plugins: [structureTool()],
-  schema: {types: [siteSettings, page, property, testimonial, service, insight]}
+  schema: {types: [siteSettings, page, service]}
 })
