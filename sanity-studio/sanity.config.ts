@@ -62,6 +62,7 @@ const service = defineType({
 export default defineConfig({
   name: 'default',
   title: 'ABNBHost Content Studio',
+  basePath: '/studio',
   projectId: 'nvnz9p1u',
   dataset: 'production',
   plugins: [structureTool()],
